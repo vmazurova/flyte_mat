@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "member_details",
+  "info": {
+    "singularName": "member-detail",
+    "pluralName": "member-details",
+<<<<<<< HEAD
+    "displayName": "MemberDetails",
+=======
+    "displayName": "Member Details",
+>>>>>>> origin/main
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "float"
+    },
+    "height": {
+      "type": "float"
+    },
+    "bmi": {
+<<<<<<< HEAD
+      "type": "decimal"
+=======
+      "type": "float"
+>>>>>>> origin/main
+    },
+    "body_fat_percentage": {
+      "type": "float"
+    },
+    "goals": {
+<<<<<<< HEAD
+      "type": "string"
+    },
+    "last_update": {
+      "type": "datetime"
+=======
+      "type": "text"
+    },
+    "last_update": {
+      "type": "datetime"
+    },
+    "id_detail": {
+      "type": "uid"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+>>>>>>> origin/main
+    }
+  }
+}
