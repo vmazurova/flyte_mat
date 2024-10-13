@@ -4,19 +4,14 @@
   "info": {
     "singularName": "booking",
     "pluralName": "bookings",
-<<<<<<< HEAD
     "displayName": "Bookings",
     "description": ""
-=======
-    "displayName": "Bookings"
->>>>>>> origin/main
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-<<<<<<< HEAD
     "booking_date": {
       "type": "datetime"
     },
@@ -24,30 +19,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::payment.payment"
-=======
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "booking_id"
-    },
-    "course_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::course.course",
-      "inversedBy": "bookings"
-    },
-    "date": {
-      "type": "datetime"
-    },
-    "status_of_booking": {
-      "type": "enumeration",
-      "enum": [
-        "Potvrzeno",
-        "Zrušeno",
-        "Čeká se na vyřízení"
-      ]
->>>>>>> origin/main
     }
   }
 }

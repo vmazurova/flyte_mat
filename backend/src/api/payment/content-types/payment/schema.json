@@ -4,11 +4,8 @@
   "info": {
     "singularName": "payment",
     "pluralName": "payments",
-<<<<<<< HEAD
+
     "displayName": "Payments",
-=======
-    "displayName": "Payment",
->>>>>>> origin/main
     "description": ""
   },
   "options": {
@@ -22,30 +19,14 @@
     "payment_method": {
       "type": "enumeration",
       "enum": [
-<<<<<<< HEAD
+
         "Hotově",
         "Kartou"
       ]
     },
     "payment_date": {
       "type": "datetime"
-=======
-        "Kartou",
-        "Hotově"
-      ]
-    },
-    "payment_date": {
-      "type": "date"
-    },
-    "payment_id": {
-      "type": "uid"
-    },
-    "user_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "payments"
->>>>>>> origin/main
+
     }
   }
 }

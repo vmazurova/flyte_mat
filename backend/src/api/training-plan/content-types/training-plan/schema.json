@@ -4,11 +4,9 @@
   "info": {
     "singularName": "training-plan",
     "pluralName": "training-plans",
-<<<<<<< HEAD
+
     "displayName": "TrainingPlans",
-=======
-    "displayName": "Training Plan",
->>>>>>> origin/main
+
     "description": ""
   },
   "options": {
@@ -16,52 +14,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-<<<<<<< HEAD
+
     "title": {
-=======
-    "Title": {
->>>>>>> origin/main
+
       "type": "string"
     },
     "description": {
       "type": "text"
     },
-<<<<<<< HEAD
+
     "goals": {
       "type": "text"
     },
     "created_training_at": {
       "type": "datetime"
-=======
-    "part": {
-      "type": "enumeration",
-      "enum": [
-        "Zadek",
-        "Nohy",
-        "Ruce",
-        "Záda",
-        "Břicho"
-      ],
-      "default": "Záda"
-    },
-    "created_training_at": {
-      "type": "date"
-    },
-    "plan_id": {
-      "type": "uid"
-    },
-    "trainer_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "training_plans"
-    },
-    "user_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "training_plans"
->>>>>>> origin/main
     }
   }
 }

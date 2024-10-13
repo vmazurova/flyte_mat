@@ -470,33 +470,21 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.role'
     >;
     first_name: Schema.Attribute.String & Schema.Attribute.Required;
-<<<<<<< HEAD
     last_name: Schema.Attribute.String & Schema.Attribute.Required;
     meal_plans: Schema.Attribute.Relation<
       'oneToMany',
-=======
-    second_name: Schema.Attribute.String & Schema.Attribute.Required;
-    id_user: Schema.Attribute.UID;
-    meal_plan: Schema.Attribute.Relation<
-      'oneToOne',
->>>>>>> origin/main
       'api::meal-plan.meal-plan'
     >;
     training_plans: Schema.Attribute.Relation<
       'oneToMany',
       'api::training-plan.training-plan'
     >;
-<<<<<<< HEAD
     member_detail: Schema.Attribute.Relation<
       'oneToOne',
       'api::member-detail.member-detail'
     >;
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
-=======
-    course_id: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
-    booking_id: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
->>>>>>> origin/main
     payments: Schema.Attribute.Relation<'oneToMany', 'api::payment.payment'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -513,8 +501,6 @@ export interface PluginUsersPermissionsUser
   };
 }
 
-<<<<<<< HEAD
-=======
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
@@ -543,40 +529,20 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
->>>>>>> origin/main
 export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
   collectionName: 'bookings';
   info: {
     singularName: 'booking';
     pluralName: 'bookings';
     displayName: 'Bookings';
-<<<<<<< HEAD
     description: '';
-=======
->>>>>>> origin/main
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-<<<<<<< HEAD
     booking_date: Schema.Attribute.DateTime;
     payments: Schema.Attribute.Relation<'oneToMany', 'api::payment.payment'>;
-=======
-    user: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    course_id: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
-    date: Schema.Attribute.DateTime;
-    status_of_booking: Schema.Attribute.Enumeration<
-      [
-        'Potvrzeno',
-        'Zru\u0161eno',
-        '\u010Cek\u00E1 se na vy\u0159\u00EDzen\u00ED',
-      ]
-    >;
->>>>>>> origin/main
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -597,11 +563,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'course';
     pluralName: 'courses';
-<<<<<<< HEAD
     displayName: 'Courses';
-=======
-    displayName: 'Course';
->>>>>>> origin/main
     description: '';
   };
   options: {
@@ -610,18 +572,8 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-<<<<<<< HEAD
     date: Schema.Attribute.DateTime;
     max_capacity: Schema.Attribute.Integer;
-=======
-    date: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    max_capacity: Schema.Attribute.Integer;
-    course_id: Schema.Attribute.UID;
-    trainer_id: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
->>>>>>> origin/main
     bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -635,8 +587,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
 }
 
-<<<<<<< HEAD
-=======
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -665,17 +615,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
->>>>>>> origin/main
 export interface ApiMealPlanMealPlan extends Struct.CollectionTypeSchema {
   collectionName: 'meal_plans';
   info: {
     singularName: 'meal-plan';
     pluralName: 'meal-plans';
-<<<<<<< HEAD
     displayName: 'MealPlans';
-=======
-    displayName: 'Meal Plan';
->>>>>>> origin/main
     description: '';
   };
   options: {
@@ -684,20 +629,11 @@ export interface ApiMealPlanMealPlan extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-<<<<<<< HEAD
     created_plan_at: Schema.Attribute.DateTime;
-=======
-    created_plan_at: Schema.Attribute.Date;
-    meal_plan_id: Schema.Attribute.UID;
-    trainer_id: Schema.Attribute.Relation<
-      'oneToOne',
+    users: Schema.Attribute.Relation<
+      'manyToMany',
       'plugin::users-permissions.user'
     >;
-    user_id: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
->>>>>>> origin/main
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -719,11 +655,7 @@ export interface ApiMemberDetailMemberDetail
   info: {
     singularName: 'member-detail';
     pluralName: 'member-details';
-<<<<<<< HEAD
     displayName: 'MemberDetails';
-=======
-    displayName: 'Member Details';
->>>>>>> origin/main
     description: '';
   };
   options: {
@@ -732,22 +664,10 @@ export interface ApiMemberDetailMemberDetail
   attributes: {
     weight: Schema.Attribute.Float;
     height: Schema.Attribute.Float;
-<<<<<<< HEAD
-    bmi: Schema.Attribute.Decimal;
+    bmi: Schema.Attribute.Float;
     body_fat_percentage: Schema.Attribute.Float;
     goals: Schema.Attribute.String;
     last_update: Schema.Attribute.DateTime;
-=======
-    bmi: Schema.Attribute.Float;
-    body_fat_percentage: Schema.Attribute.Float;
-    goals: Schema.Attribute.Text;
-    last_update: Schema.Attribute.DateTime;
-    id_detail: Schema.Attribute.UID;
-    users_permissions_user: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
->>>>>>> origin/main
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -768,11 +688,7 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'payment';
     pluralName: 'payments';
-<<<<<<< HEAD
     displayName: 'Payments';
-=======
-    displayName: 'Payment';
->>>>>>> origin/main
     description: '';
   };
   options: {
@@ -780,18 +696,8 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
   };
   attributes: {
     amount: Schema.Attribute.Float;
-<<<<<<< HEAD
     payment_method: Schema.Attribute.Enumeration<['Hotov\u011B', 'Kartou']>;
     payment_date: Schema.Attribute.DateTime;
-=======
-    payment_method: Schema.Attribute.Enumeration<['Kartou', 'Hotov\u011B']>;
-    payment_date: Schema.Attribute.Date;
-    payment_id: Schema.Attribute.UID;
-    user_id: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
->>>>>>> origin/main
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -813,40 +719,17 @@ export interface ApiTrainingPlanTrainingPlan
   info: {
     singularName: 'training-plan';
     pluralName: 'training-plans';
-<<<<<<< HEAD
     displayName: 'TrainingPlans';
-=======
-    displayName: 'Training Plan';
->>>>>>> origin/main
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-<<<<<<< HEAD
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     goals: Schema.Attribute.Text;
     created_training_at: Schema.Attribute.DateTime;
-=======
-    Title: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    part: Schema.Attribute.Enumeration<
-      ['Zadek', 'Nohy', 'Ruce', 'Z\u00E1da', 'B\u0159icho']
-    > &
-      Schema.Attribute.DefaultTo<'Z\u00E1da'>;
-    created_training_at: Schema.Attribute.Date;
-    plan_id: Schema.Attribute.UID;
-    trainer_id: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    user_id: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
->>>>>>> origin/main
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1237,15 +1120,10 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-<<<<<<< HEAD
-      'api::booking.booking': ApiBookingBooking;
-      'api::course.course': ApiCourseCourse;
-=======
       'api::about.about': ApiAboutAbout;
       'api::booking.booking': ApiBookingBooking;
       'api::course.course': ApiCourseCourse;
       'api::global.global': ApiGlobalGlobal;
->>>>>>> origin/main
       'api::meal-plan.meal-plan': ApiMealPlanMealPlan;
       'api::member-detail.member-detail': ApiMemberDetailMemberDetail;
       'api::payment.payment': ApiPaymentPayment;

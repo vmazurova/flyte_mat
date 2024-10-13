@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-/*
- * The app doesn't have any components yet.
- */
-=======
 import type { Struct, Schema } from '@strapi/strapi';
 
 export interface SharedSlider extends Struct.ComponentSchema {
@@ -78,4 +73,3 @@ declare module '@strapi/strapi' {
     }
   }
 }
->>>>>>> origin/main

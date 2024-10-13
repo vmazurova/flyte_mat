@@ -4,11 +4,7 @@
   "info": {
     "singularName": "course",
     "pluralName": "courses",
-<<<<<<< HEAD
     "displayName": "Courses",
-=======
-    "displayName": "Course",
->>>>>>> origin/main
     "description": ""
   },
   "options": {
@@ -23,37 +19,15 @@
       "type": "text"
     },
     "date": {
-<<<<<<< HEAD
       "type": "datetime"
-=======
-      "type": "datetime",
-      "required": true
->>>>>>> origin/main
     },
     "max_capacity": {
       "type": "integer"
     },
-<<<<<<< HEAD
     "bookings": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::booking.booking"
-=======
-    "course_id": {
-      "type": "uid"
-    },
-    "trainer_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "course_id"
-    },
-    "bookings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::booking.booking",
-      "mappedBy": "course_id"
->>>>>>> origin/main
     }
   }
 }

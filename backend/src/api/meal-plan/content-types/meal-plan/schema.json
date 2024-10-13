@@ -4,11 +4,7 @@
   "info": {
     "singularName": "meal-plan",
     "pluralName": "meal-plans",
-<<<<<<< HEAD
     "displayName": "MealPlans",
-=======
-    "displayName": "Meal Plan",
->>>>>>> origin/main
     "description": ""
   },
   "options": {
@@ -23,26 +19,13 @@
       "type": "text"
     },
     "created_plan_at": {
-<<<<<<< HEAD
       "type": "datetime"
-=======
-      "type": "date"
     },
-    "meal_plan_id": {
-      "type": "uid"
-    },
-    "trainer_id": {
+    "users": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "meal_plan"
-    },
-    "user_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "meal_plan"
->>>>>>> origin/main
+      "mappedBy": "meal_plans"
     }
   }
 }
