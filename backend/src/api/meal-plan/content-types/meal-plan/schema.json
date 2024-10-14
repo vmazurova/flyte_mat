@@ -1,31 +1,31 @@
-{
-  "kind": "collectionType",
-  "collectionName": "meal_plans",
-  "info": {
-    "singularName": "meal-plan",
-    "pluralName": "meal-plans",
-    "displayName": "MealPlans",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "title": {
-      "type": "string"
+  {
+    "kind": "collectionType",
+    "collectionName": "meal_plans",
+    "info": {
+      "singularName": "meal-plan",
+      "pluralName": "meal-plans",
+      "displayName": "MealPlans",
+      "description": ""
     },
-    "description": {
-      "type": "text"
+    "options": {
+      "draftAndPublish": true
     },
-    "created_plan_at": {
-      "type": "datetime"
-    },
-    "users": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "meal_plans"
+    "pluginOptions": {},
+    "attributes": {
+      "title": {
+        "type": "string"
+      },
+      "description": {
+        "type": "text"
+      },
+      "created_plan_at": {
+        "type": "datetime"
+      },
+      "users": {
+        "type": "relation",
+        "relation": "manyToMany",
+        "target": "plugin::users-permissions.user",
+        "mappedBy": "meal_plans"
+      }
     }
   }
-}
