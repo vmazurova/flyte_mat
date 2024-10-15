@@ -22,11 +22,10 @@ const ScrollBar = () => {
     <Box
       position="fixed"
       top="0"
-      left="50%"
-      transform="translateX(-50%)"
+      left="20px"
       height="100vh"
       width="2px"
-      backgroundColor="rgba(255, 255, 255, 0.2)" // světlejší barva čáry
+      backgroundColor="rgba(255, 255, 255, 0.2)"
       zIndex="100"
     >
       <Box
@@ -35,7 +34,7 @@ const ScrollBar = () => {
         left="0"
         width="100%"
         height={`${scrollHeight}%`}
-        backgroundColor="primary.500" // Barva vyplnění, např. fialová
+        backgroundColor="purple.500"
       />
     </Box>
   );

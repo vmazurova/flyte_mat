@@ -1,5 +1,6 @@
-import { Box, Heading, Text, Button, Input, Flex, VStack, HStack } from '@chakra-ui/react';
-import BackgroundImage from '../assets/istockphoto-1210655852-612x612.jpg';  // Nový obrázek
+import { Box, Heading, Text, Button, Input, Flex, VStack, HStack, Image } from '@chakra-ui/react';
+import BackgroundImage from '../assets/homepage_back.jpg';
+import PhoneMockup from '../assets/phone_mockup.png'; // Přidej obrázek mockupu telefonu
 
 const Hero = () => {
   return (
@@ -10,8 +11,8 @@ const Hero = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
+      overflow="hidden"
     >
-      {/* Obrázek pozadí */}
       <Box
         position="absolute"
         top="0"
@@ -20,89 +21,76 @@ const Hero = () => {
         height="100%"
         backgroundImage={`url(${BackgroundImage})`}
         backgroundRepeat="no-repeat"
-        backgroundSize="contain"  // Změněno na contain, aby se celý obrázek zobrazil
-        backgroundPosition="center center"  // Střed obrázku
-        zIndex="-1"
+        backgroundSize="cover"
+        backgroundPosition="center center"
       />
 
-      {/* Překryvná tmavá vrstva (overlay) */}
       <Box
         position="absolute"
         top="0"
         left="0"
         width="100%"
         height="100%"
-        backgroundColor="rgba(0, 0, 0, 0.2)"  // Jemná tmavá vrstva
+        backgroundColor="rgba(0, 0, 0, 0.6)"
         zIndex="0"
       />
 
-      {/* Hlavní obsah hero sekce */}
-      <VStack spacing="6" textAlign="center" zIndex="1" color="white">
-        <Heading fontSize="6xl" fontWeight="bold">Let's build from here</Heading>
-        <Text fontSize="xl" opacity="0.8">The world’s leading AI-powered developer platform.</Text>
-
-        {/* E-mail input a tlačítka */}
-        <HStack spacing="4">
-          <Input
-            placeholder="Email address"
-            size="lg"
-            variant="outline"
-            bg="white"
-            color="black"
-            width="300px"
-          />
-          <Button
-            colorScheme="purple"
-            size="lg"
-            px="8"
-            bg="purple.600"
-            _hover={{ bg: 'purple.500' }}
-          >
-            Sign up for GitHub
-          </Button>
-          <Button
-            colorScheme="gray"
-            size="lg"
-            variant="outline"
-            px="8"
-            _hover={{ bg: 'whiteAlpha.200' }}
-          >
-            Start a free enterprise trial
-          </Button>
-        </HStack>
-
-        {/* Loga pod e-mailem */}
-        <HStack pt="8" spacing="6" justifyContent="center">
-          <Text fontSize="md" color="gray.400">Trusted by the world’s leading organizations</Text>
-          {/* Příklad loga */}
-          <img src="https://example.com/logo1.png" alt="Logo1" width="80" />
-          <img src="https://example.com/logo2.png" alt="Logo2" width="80" />
-          <img src="https://example.com/logo3.png" alt="Logo3" width="80" />
-        </HStack>
-      </VStack>
-
-      {/* Progresivní scrollbar */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        height="100%"
-        width="2px"
-        bgGradient="linear(to-b, purple.500, green.500)"  // Barvy přechodu
-        boxShadow="0px 0px 8px rgba(255, 255, 255, 0.5)"
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        align="center"
+        justify="space-between"
+        zIndex="1"
+        color="white"
+        maxW="1200px"
+        width="100%"
+        px={8}
       >
-        {/* Ikona, která se zobrazí na začátku progress baru */}
+        <VStack
+          align="flex-start"
+          spacing="6"
+          textAlign="left"
+          maxW="600px"
+          p={4}
+        >
+          <Heading fontSize={{ base: "4xl", md: "6xl" }} fontWeight="bold">Posuň hranice svého výkonu...</Heading>
+          <Text fontSize={{ base: "md", md: "xl" }} opacity="0.8">
+            Od snu k realitě - každý trénink na míru jen pro tebe!
+          </Text>
+
+          <HStack spacing="4" flexWrap="wrap">
+            <Input
+              placeholder="Email address"
+              size="lg"
+              variant="outline"
+              bg="white"
+              color="black"
+              width={{ base: "100%", md: "300px" }}
+            />
+            <Button
+              colorScheme="purple"
+              size="lg"
+              px="8"
+              bg="purple.600"
+              _hover={{ bg: 'purple.500' }}
+              width={{ base: "100%", md: "auto" }}
+            >
+             Registrace
+            </Button>
+          </HStack>
+
+        </VStack>
+
         <Box
-          position="absolute"
-          top="10%"
-          left="-10px"
-          width="20px"
-          height="20px"
-          borderRadius="50%"
-          bg="purple.500"
-          boxShadow="0px 0px 8px rgba(255, 255, 255, 0.8)"
-        />
-      </Box>
+          ml={{ base: 0, md: 8 }}
+          mt={{ base: 8, md: 0 }}
+          maxW="1500px" 
+          w="100%"
+          transform={{ base: "none", md: "translateX(200px)" }}
+          
+        >
+          <Image src={PhoneMockup} alt="Phone Mockup" width="100%" />
+        </Box>
+      </Flex>
     </Box>
   );
 };
