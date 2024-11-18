@@ -52,12 +52,12 @@ Aby byl projekt robustní a snadno spravovatelný, byly vybrány následující 
 
 - [x] **Nastavení vývojového prostředí**
   - [x]Nainstalovat a nastavit projekt v Node.js.
-  - Přidat React.js a Tailwind CSS pro tvorbu uživatelského rozhraní.
-  - Nastavit Strapi API pro backend a správu obsahu.
-  - Implementovat autentifikaci uživatelů přes Strapi.
+  - [x]Přidat React.js a Tailwind CSS pro tvorbu uživatelského rozhraní.
+  - [x]Nastavit Strapi API pro backend a správu obsahu.
+  - [x]Implementovat autentifikaci uživatelů přes Strapi.
 
 - [ ] **Vývoj základních funkcí**
-  - Vytvořit Landing Page s možností rezervace zkušební lekce.
+  - [x]Vytvořit Landing Page s možností rezervace zkušební lekce.
   - Implementovat registraci a přihlášení uživatelů přes Strapi.
   - Vytvořit základní strukturu Osobní karty s údaji o členovi.
   - Implementovat rezervační systém s kalendářem pro kurzy.
